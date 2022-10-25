@@ -45,6 +45,8 @@ function makePac() {
 function update() {
   // loop over pacmen array and move each one and move image in DOM
   pacMen.forEach((item) => {
+    if(item.velocity.x < 0 ) item.newimg.src = 'PacMan3.png';
+    if(item.velocity.x > 0 ) item.newimg.src = 'PacMan1.png';
     checkCollisions(item);
     item.position.x += item.velocity.x;
     item.position.y += item.velocity.y;
